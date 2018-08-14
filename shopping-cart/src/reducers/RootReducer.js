@@ -1,9 +1,9 @@
 import {combineReducers} from 'redux';
-import userInformReducer from './UserInformReducer';
+import userActionReducer from './UserActionReducer';
 import { root } from 'postcss';
 
 const rootReducer = combineReducers({
-    inform : userInformReducer
+    userActions : userActionReducer
 })
 
 export default rootReducer;

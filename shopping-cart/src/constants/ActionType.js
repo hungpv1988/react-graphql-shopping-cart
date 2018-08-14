@@ -1,1 +1,2 @@
-export const ALERT = 'alert';
+export const COMPLETE = 'COMPLETE';
+export const INCOMPLETE = 'INCOMPLETE';

@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import ReactDOM from "react-dom";
-import * as actions from './actions/UserInform';
+import * as actions from './actions/UserAction';
 import {connect} from 'react-redux';
 
 class App extends Component{
@@ -9,8 +9,12 @@ class App extends Component{
         
     }
 
-    onClick(e){
-        this.props.alert("Yahoo");
+    onComplete(e){
+        this.props.complete();
+    }
+
+    onIncomplete(e){
+        this.props.incomplete();
     }
 
     render(){
@@ -26,8 +30,8 @@ class App extends Component{
                 </div>
                 
                 <div>
-                    <button onClick={(e) => this.onClick(e)}> Complete </button>
-                    <button> InComplete </button>
+                    <button onClick={(e) => this.onComplete(e)}> Complete </button>
+                    <button onClick={(e) => this.onIncomplete(e)}> InComplete </button>
                 </div>
             </div>
         )
@@ -36,13 +40,14 @@ class App extends Component{
 
 function mapStateToProps(state){
     return {
-        text: state.inform.text
+        text: state.userActions.message
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return{
-        alert: (text) => {dispatch(actions.alert(text))}
+        complete: () => {dispatch(actions.complete())},
+        incomplete: () => {dispatch(actions.incomplete())}
     }
 }
 
