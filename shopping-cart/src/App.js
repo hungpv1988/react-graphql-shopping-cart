@@ -2,8 +2,10 @@ import React, {Component} from "react";
 import ReactDOM from "react-dom";
 import * as actions from './actions/UserAction';
 import {connect} from 'react-redux';
+import CardList from './components/CardList';
+import styles from './css/CardListStyle.css';
 
-class App extends Component{
+export default class App extends Component{
     constructor(){
         super();
         
@@ -20,35 +22,24 @@ class App extends Component{
     render(){
         var {text} = this.props;
         return (
-            <div>
-                <div>
-                    super cool
-                </div>
-                
-                <div>
-                    {text}
-                </div>
-                
-                <div>
-                    <button onClick={(e) => this.onComplete(e)}> Complete </button>
-                    <button onClick={(e) => this.onIncomplete(e)}> InComplete </button>
-                </div>
+            <div className={styles.container}>
+                <CardList />
             </div>
         )
     }
 }
 
-function mapStateToProps(state){
-    return {
-        text: state.userActions.message
-    }
-}
+// function mapStateToProps(state){
+//     return {
+//         text: state.userActions.message
+//     }
+// }
 
-const mapDispatchToProps = (dispatch) => {
-    return{
-        complete: () => {dispatch(actions.complete())},
-        incomplete: () => {dispatch(actions.incomplete())}
-    }
-}
+// const mapDispatchToProps = (dispatch) => {
+//     return{
+//         complete: () => {dispatch(actions.complete())},
+//         incomplete: () => {dispatch(actions.incomplete())}
+//     }
+// }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+// export default connect(mapStateToProps, mapDispatchToProps)(App);
