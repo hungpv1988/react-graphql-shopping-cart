@@ -1,0 +1,84 @@
+.main{
+    padding: 20px 2%;
+    max-width: 1200px;
+    margin: 20px auto 0 auto;
+}
+
+.float-card{
+    position: fixed;
+    top: 0;
+    right: -450px;
+    width: 450px;
+    height: 100%;
+    background-color: #1b1a20;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: right .2s;
+    -o-transition: right .2s;
+    transition: right .2s;
+}
+
+.float-card .float-card--open{
+    right:0;
+}
+
+.float-card .bag {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 15px;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAoCAYAAABw65OnAAAAGXRFW…caEnTb0b+vm7qPJLSLPg9eia8tadkvMALO8A1X5v0jwAAz/zxKXo2sPAAAAABJRU5ErkJggg==);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 50%;
+}
+
+.float-cart .bag--float-cart-closed {
+    position: absolute;
+    background-color: #000;
+    background-size: 50%;
+    left: -60px;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+}
+
+.float-cart .bag__quantity{
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    color: #0c0b10;
+    font-weight: 700;
+    font-size: .7em;
+    text-align: center;
+    line-height: 18px;
+    border-radius: 50%;
+    background-color: #eabf00;
+    position: absolute;
+    bottom: -5px;
+    right: 0;
+}
+
+.float-cart .bag--float-cart-closed  .bag__quantity{
+    bottom: 5px;
+    right: 10px; 
+}
+
+.float-card .content{
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.float-card .content .header{
+    color: #ececec;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 45px 0;
+}
+
+.float-card .content .header .bag{
+
+}

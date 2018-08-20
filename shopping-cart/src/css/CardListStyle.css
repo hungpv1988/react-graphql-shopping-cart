@@ -1,4 +1,6 @@
-.container{
-    margin-bottom: 10px;
+.card-list{
+    width: 85%;
+    float: left;
+    min-height: 600px;
 }
 

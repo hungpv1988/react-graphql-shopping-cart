@@ -1,17 +1,18 @@
 import React, {Component} from 'react';
-import ReactDOM from 'react-dom';
 import OrderBy from './OrderBy';
-import styles from '../css/ContainerHeader.css';
+import '../css/CardListHeader.css';
 
 export default class CardListHeader extends Component{
     render(){
         return(
-            <div className={styles.container}>
-                <small className={styles.productFound}>
+            <div className='card-list-header'>
+                <small className=''>
                     <span>17 product(s) found</span>
                 </small>
 
                 <OrderBy />
+
+                <div className='clearfix'></div>
             </div>
         )
     }

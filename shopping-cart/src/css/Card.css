@@ -1,0 +1,68 @@
+.card-list .card {
+    float: left;
+    width: 25%;
+    position: relative;
+    text-align: center;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 10px;
+    margin-bottom: 30px;
+    border: 1px solid transparent;
+}
+
+.card-list .card .ship {
+    position: absolute;
+    color: #ececec;
+    top: 10px;
+    right: 10px;
+    padding: 5px;
+    font-size: .6em;
+    background-color: #1b1a20;
+    cursor: default;
+}
+
+.card-list .card .thumb{
+    width: 100%; 
+}
+
+.card-list .card .title {
+    position: relative;
+    padding: 0 20px;
+    height: 45px;
+}
+
+.card-list .card .title {
+    position: relative;
+      padding: 0 20px;
+      height: 45px; 
+}
+
+.card-list .card .title:before {
+    content: "";
+    width: 20px;
+    height: 2px;
+    background-color: #eabf00;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -10px;
+}
+.card-list .card .price {
+    height: 60px;
+}
+
+.card-list .card .price .val b{
+    font-size: 1.5em;
+    margin-left: 5px; 
+}
+
+.card-list .card .buy-btn {
+    background-color: #1b1a20;
+    color: #fff;
+    padding: 15px 0;
+    margin-top: 10px;
+    cursor: pointer;
+    -webkit-transition: background-color .2s;
+    -o-transition: background-color .2s;
+    transition: background-color .2s;
+}

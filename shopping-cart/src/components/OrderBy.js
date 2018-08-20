@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
-import ReactDOM from 'react-dom';
+import '../css/Common.css';
 
 export default class OrderBy extends Component{
     render(){
         return(
-            <div class="sort">
+            <div className='sort'>
                 <span>Order By</span>
                 <select>
                     <option value="0">Select</option>

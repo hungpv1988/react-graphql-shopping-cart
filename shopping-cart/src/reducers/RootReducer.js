@@ -1,9 +1,10 @@
 import {combineReducers} from 'redux';
 import userActionReducer from './UserActionReducer';
-import { root } from 'postcss';
+import CardReducer from './CardReducer';
 
 const rootReducer = combineReducers({
-    userActions : userActionReducer
+    userActions : userActionReducer,
+    cards : CardReducer
 })
 
 export default rootReducer;

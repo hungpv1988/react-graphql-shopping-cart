@@ -1,0 +1,7 @@
+.card-list-header{
+    margin-bottom: 10px;
+}
+
+.card-list-header .sort {
+    float: right;
+}
