@@ -6,14 +6,29 @@ export function getAllCards(){
     }
 };
 
+export function getCardsByCriteria(criteria){
+    return{
+        type: actionTypes.GETCARDBYCRITERIA,
+        criteria: criteria
+    }
+}
+
 export function getAllSizes(){
     return{
         type:actionTypes.GETALLCARDSIZES
     }
 }
 
-export function addCriteria(){
+export function addCriteria(size){
     return{
-        type: actionTypes.ADDCRITERIA
+        type: actionTypes.ADDCRITERIA,
+        size: size
+    }
+}
+
+export function removeCriteria(size){
+    return{
+        type: actionTypes.REMOVECRITERIA,
+        size: size
     }
 }

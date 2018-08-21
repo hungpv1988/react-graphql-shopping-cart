@@ -1,24 +1,12 @@
 import React, {Component} from "react";
-import ReactDOM from "react-dom";
-import * as actions from './actions/UserAction';
 import * as cardActions from './actions/CardAction';
 import {connect} from 'react-redux';
 import CardList from './components/CardList';
-
 import FilterList from './components/FilterList';
 
 class App extends Component{
     constructor(){
         super();
-        
-    }
-
-    onComplete(e){
-        this.props.complete();
-    }
-
-    onIncomplete(e){
-        this.props.incomplete();
     }
 
     render(){
@@ -49,20 +37,22 @@ class App extends Component{
         this.props.getAllCards();
         this.props.getAllSizes();
     }
+
+    componentDidUpdate(){
+        
+    }
 }
 
 function mapStateToProps(state){
     return {
-        text: state.userActions.message,
         cards: state.cards,
-        sizes: state.sizes
+        sizes: state.sizes,
+        criteria: state.criteria
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return{
-        complete: () => {dispatch(actions.complete())},
-        incomplete: () => {dispatch(actions.incomplete())},
         getAllCards: () => {dispatch(cardActions.getAllCards())},
         getAllSizes: () => {dispatch(cardActions.getAllSizes())}
     }
