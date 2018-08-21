@@ -22,21 +22,13 @@ class App extends Component{
     }
 
     render(){
-        var filterItems = [
-            {name: 'XS', value : 'XS'}, 
-            {name: 'S', value : 'S'}, 
-            {name: 'M', value : 'M'}, 
-            {name: 'ML', value : 'ML'}, 
-            {name: 'L', value : 'L'}, 
-            {name: 'XL', value : 'XL'}, 
-            {name: 'XXL', value : 'XXL'}
-         ];
-
         const cards = this.props.cards;
+        const sizes = this.props.sizes;
+
         return (
             <div>     
                 <div className='main'>
-                    <FilterList items={filterItems}/>
+                    <FilterList sizes={sizes} onItemClick='onItemClick'/>
                     <CardList itemList={cards} />
                 </div>
              
@@ -49,19 +41,21 @@ class App extends Component{
         )
     }
 
+    onFilterItemClick(e){
+
+    };
+    
     componentDidMount(){
-        // debugger;
-        // if (!this.props.getAllCard){
-        //     return;
-        // }
-        this.props.getAllCard();
+        this.props.getAllCards();
+        this.props.getAllSizes();
     }
 }
 
 function mapStateToProps(state){
     return {
         text: state.userActions.message,
-        cards: state.cards
+        cards: state.cards,
+        sizes: state.sizes
     }
 }
 
@@ -69,7 +63,8 @@ const mapDispatchToProps = (dispatch) => {
     return{
         complete: () => {dispatch(actions.complete())},
         incomplete: () => {dispatch(actions.incomplete())},
-        getAllCard: () => {dispatch(cardActions.getAllCard())}
+        getAllCards: () => {dispatch(cardActions.getAllCards())},
+        getAllSizes: () => {dispatch(cardActions.getAllSizes())}
     }
 }
 

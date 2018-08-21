@@ -8,7 +8,7 @@ export default class FilterList extends Component{
     };
 
     render(){
-        var filterItems =  this.props.items.map((option, index) => 
+        var filterItems =  this.props.sizes.map((option, index) => 
             <FilterItem item={option} key={index} />
         );
         return(

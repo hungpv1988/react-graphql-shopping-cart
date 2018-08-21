@@ -138,5 +138,19 @@ export default class UserService{
         
         return products
 
+    };
+
+    getAllCardSizes(params) {
+        var filterItems = [
+            {name: 'XS', value : 'XS'}, 
+            {name: 'S', value : 'S'}, 
+            {name: 'M', value : 'M'}, 
+            {name: 'ML', value : 'ML'}, 
+            {name: 'L', value : 'L'}, 
+            {name: 'XL', value : 'XL'}, 
+            {name: 'XXL', value : 'XXL'}
+         ];
+
+        return filterItems; 
     }
 }

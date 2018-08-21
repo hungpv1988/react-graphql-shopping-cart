@@ -8,8 +8,7 @@ const cardService = new CardService();
 
 export default class CardList extends Component{
     render(){
-        var itemList = this.props.itemList;
-        var cardList = !itemList ? '' : itemList.map((item,index) => <Card key={index} item={item} />);
+        var cardList = this.props.itemList.map((item,index) => <Card key={index} item={item} />);
 
         return (
             <div className="card-list">
