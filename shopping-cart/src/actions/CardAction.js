@@ -1,8 +1,9 @@
 import * as actionTypes from '../constants/ActionType';
 
-export function getAllCards(){
+export function getAllCards(criteria){
     return{
-        type: actionTypes.GetALLCARD
+        type: actionTypes.GetALLCARD,
+        criteria: criteria
     }
 };
 

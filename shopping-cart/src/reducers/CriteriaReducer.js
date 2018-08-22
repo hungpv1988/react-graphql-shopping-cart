@@ -7,7 +7,7 @@ export default function CriteriaReducer(state = initialState, action){
               return [...initialState, action.size];
         
         case actionTypes.REMOVECRITERIA: 
-            state = state.filter( function(item)  {return  (item == action.size) ;}); 
+            state = state.filter( function(item)  {return  (item !== action.size) ;}); 
             return state;
 
         default: return state;

@@ -34,12 +34,12 @@ class App extends Component{
     };
     
     componentDidMount(){
-        this.props.getAllCards();
+        this.props.getAllCards(this.props.sizes);
         this.props.getAllSizes();
     }
 
     componentDidUpdate(){
-        
+        var item = 1;
     }
 }
 
@@ -58,4 +58,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);   

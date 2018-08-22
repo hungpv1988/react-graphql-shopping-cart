@@ -1,5 +1,5 @@
 export default class UserService{
-    getItems(){
+    getItems(criteria){
           
         var products = [
                 {
@@ -135,7 +135,14 @@ export default class UserService{
                 }
             ]
                 
-        
+        if (!criteria){
+            return products;
+        }
+
+        products = products.filter(function(item){ 
+            var availableSizes = item.availableSizes;
+         //   return (availableSizes.difference)
+        });
         return products
 
     };

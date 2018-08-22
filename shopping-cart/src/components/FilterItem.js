@@ -1,12 +1,20 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import * as actions from '../actions/CardAction';
 import '../css/FilterList.css';
-export default class FilterItem extends Component{
+
+class FilterItem extends Component{
     constructor(){
         super();
     };
 
     onClick(e){
+        if (e.target.checked){
+            this.props.addCriteria(e.target.value);
+            return;
+        }
 
+        this.props.removeCriteria(e.target.value);
     };
 
     render(){
@@ -22,3 +30,18 @@ export default class FilterItem extends Component{
         );
     }
 }
+
+function mapStateToProps(state){
+    return{
+        criteria: state.criteria
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return{
+        addCriteria: (criteria) => {dispatch(actions.addCriteria(criteria))} ,
+        removeCriteria: (criteria) => {dispatch(actions.removeCriteria(criteria))}
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(FilterItem);
