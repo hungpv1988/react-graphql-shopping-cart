@@ -7,10 +7,10 @@ export default class CardListHeader extends Component{
         return(
             <div className='card-list-header'>
                 <small className=''>
-                    <span>17 product(s) found</span>
+                    <span>{this.props.numberOfItem} product(s) found</span>
                 </small>
 
-                <OrderBy />
+                <OrderBy orderChanged={this.props.orderChanged} />
 
                 <div className='clearfix'></div>
             </div>
