@@ -16,7 +16,7 @@ class App extends Component{
         return (
             <div>     
                 <div className='main'>
-                    <FilterList sizes={sizes} onItemClick='onItemClick'/>
+                    <FilterList sizes={sizes}/>
                     <CardList itemList={cards} />
                 </div>
              
@@ -28,18 +28,16 @@ class App extends Component{
             </div>
         )
     }
-
-    onFilterItemClick(e){
-
-    };
     
     componentDidMount(){
-        this.props.getAllCards(this.props.sizes);
+        this.props.getCards(this.props.sizes);
         this.props.getAllSizes();
     }
 
-    componentDidUpdate(){
-        var item = 1;
+    componentDidUpdate(prevProps){
+        if (prevProps.criteria != this.props.criteria){
+            this.props.getCards(this.props.criteria);
+        }
     }
 }
 
@@ -53,7 +51,7 @@ function mapStateToProps(state){
 
 const mapDispatchToProps = (dispatch) => {
     return{
-        getAllCards: () => {dispatch(cardActions.getAllCards())},
+        getCards: (criteria) => {dispatch(cardActions.getCards(criteria))},
         getAllSizes: () => {dispatch(cardActions.getAllSizes())}
     }
 }

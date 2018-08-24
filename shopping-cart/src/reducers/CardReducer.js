@@ -6,9 +6,9 @@ const initialState = [];
 
 export default function CardReducer(state = initialState, action){
     switch(action.type){
-        case actionTypes.GetALLCARD: 
-            var items = cardService.getItems(action.criteria);
-            return [...state, ...items];
+        case actionTypes.GETCARDS: 
+            state = cardService.getItems(action.criteria);
+            return [...state];
     }
 
     return state;

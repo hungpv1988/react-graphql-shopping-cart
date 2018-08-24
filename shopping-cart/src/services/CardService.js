@@ -135,16 +135,21 @@ export default class UserService{
                 }
             ]
                 
-        if (!criteria){
+        if (!criteria || criteria.length == 0){
             return products;
         }
 
         products = products.filter(function(item){ 
             var availableSizes = item.availableSizes;
-         //   return (availableSizes.difference)
-        });
-        return products
 
+            return availableSizes.some(function(size){
+                return criteria.some(function(criterion){
+                    return criterion === size;
+                })
+            })  
+        });
+
+        return products
     };
 
     getAllCardSizes(params) {
